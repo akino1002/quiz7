@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資格対策クイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>資格対策クイズ</h1>
+        <button id="toggle-theme">ダークモード</button>
+    </div>
+    <div class="category-container" id="category-container">
+        <h2>カテゴリーを選択してください</h2>
+        <select id="category-select">
+            <option value="anatomy">機能解剖学</option>
+            <option value="physiology">生理学</option>
+            <option value="nutrition">栄養学</option>
+        </select>
+        <button id="start-quiz">クイズを開始</button>
+    </div>
+    <div class="quiz-container hidden" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Question Text</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text" class="answer-label">Answer A</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text" class="answer-label">Answer B</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text" class="answer-label">Answer C</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text" class="answer-label">Answer D</label>
+                </li>
+            </ul>
+            <div class="confidence-container">
+                <label>自信度を選んでください：</label>
+                <label><input type="radio" name="confidence" value="high"> 高い</label>
+                <label><input type="radio" name="confidence" value="medium"> 普通</label>
+                <label><input type="radio" name="confidence" value="low"> 低い</label>
+            </div>
+        </div>
+        <button id="submit">Submit</button>
+        <div id="timer">Time Left: <span id="time-left">30</span> seconds</div>
+    </div>
+    <div class="feedback-container hidden" id="feedback-container">
+        <h2>フィードバック</h2>
+        <div id="feedback-content"></div>
+        <button onclick="location.reload()">再チャレンジ</button>
+    </div>
+    <div class="ranking-container hidden" id="ranking">
+        <h2>ランキング</h2>
+        <ul id="ranking-list"></ul>
+    </div>
+    <script src="quizData.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
